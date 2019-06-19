@@ -15,19 +15,17 @@ class GameScene: SKScene {
     
  
     let mario = SKSpriteNode(imageNamed: "mario")
-    //let square = SKSpriteNode(imageNamed: "square")
-    //let triangle = SKSpriteNode(imageNamed: "triangle")
-    //let lshape = SKSpriteNode(imageNamed:"L")
+
     
     var timeOfLastUpdate:TimeInterval = 0
-    var dt: TimeInterval = 0
+    var time: TimeInterval = 0
     
     
     func spawnmario() {
         let mario = SKSpriteNode(imageNamed:"mario")
         
         // put sand at a random (x,y) position
-        let x = self.size.width/2
+        let x = self.size.width
         let y = self.size.height - 100
         mario.position.x = x
         mario.position.y = y
@@ -42,8 +40,8 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // make new sand every 10ms
-        self.dt = currentTime - timeOfLastUpdate
-        if (self.dt >= 0.9) {
+        self.time = currentTime - timeOfLastUpdate
+        if (self.time >= 0.9) {
             timeOfLastUpdate = currentTime
             self.spawnmario()
         }
