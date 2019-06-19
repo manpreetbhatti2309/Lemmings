@@ -101,7 +101,7 @@ class GameScene: SKScene {
         let mousePosition = touches.location(in:self)
         
         let spriteTouched = self.atPoint(mousePosition)
-        if (spriteTouched.name == "platform") {
+        if (spriteTouched.parent == scene) {
 //            self.makePlatform(
 //                xPosition:mousePosition.x,
 //                yPosition:mousePosition.y)
